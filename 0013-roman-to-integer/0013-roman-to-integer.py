@@ -2,10 +2,20 @@ class Solution(object):
     def romanToInt(self, s):
         
         
-        s = s.replace('IV', 'IIII').replace('IX', 'VIIII').replace('XL','XXXX').replace('XC', 'LXXXX').replace('CD','CCCC').replace('CM','DCCCC')
-
+        for i in s:
+            if 'IV' in s:
+                s = s.replace('IV','IIII')
+            elif 'IX' in s:
+                s = s.replace('IX', 'VIIII')
+            elif 'CD' in s:
+                s = s.replace('CD', 'CCCC')
+            elif 'CM' in s:
+                s = s.replace("CM", "DCCCC")
+            elif 'XL' in s:
+                s = s.replace("XL", "XXXX")
+            elif "XC" in s:
+                s = s.replace("XC","LXXXX")
             
-        
         num = 0 
         
         for i in range(len(s)):
