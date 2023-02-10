@@ -6,17 +6,21 @@ class Solution(object):
         :rtype: List[str]
         """
         
-        n = len(heights)
+        dList = []
         
-        for i in range(n):
-            for p in range(n-1):
-                
-                if heights[p] < heights[p+1]:
-                    
-                    heights[p], heights[p+1] = heights[p+1], heights[p]
-                    names[p], names[p+1] = names[p+1], names[p]
-                            
-        return names 
+        for i in range(len(heights)):
+            
+            temp = [heights[i], [names[i]]]
+            dList.append(temp)
+            
+        sort = sorted(dList)
+        sort = sort[::-1]
         
+        nameList = []
+        
+        for i in range(len(names)):
+            nameList.append(sort[i][1][0])
+        
+        return nameList 
         
         
