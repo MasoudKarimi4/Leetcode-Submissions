@@ -7,7 +7,4 @@ class Solution(object):
         
         list = nums
         
-        for i in range(len(nums)):
-            list.append(nums[i])
-        
-        return list 
+        return list + nums
